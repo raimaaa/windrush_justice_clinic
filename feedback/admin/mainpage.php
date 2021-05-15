@@ -1,3 +1,44 @@
+<?php 
+  session_start();
+  require 'config.php';
+   if (isset($_SESSION['login_user'])) {
+          $userLoggedIn = $_SESSION['login_user'];
+          $result = mysqli_query($con,"SELECT * FROM poll");
+
+            echo "<table border='1' id='customers'>
+            <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>feedback</th>
+			<th>feedback2</th>
+			<th>feedback3</th>
+            <th>Suggestions</th>
+            </tr>";
+
+            while($row = mysqli_fetch_array($result))
+            {
+            echo "<tr>";
+            echo "<td>" . $row['name'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
+            echo "<td>" . $row['phone'] . "</td>";
+            echo "<td>" . $row['feedback'] . "</td>";
+			echo "<td>" . $row['feedback2'] . "</td>";
+			echo "<td>" . $row['feedback3'] . "</td>";
+            echo "<td>" . $row['suggestions'] . "</td>";
+            echo "</tr>";
+            }
+            echo "</table>";                                                                    
+}
+  else {
+  //header("Location: index.php");
+  }
+
+
+
+
+   ?>
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -75,52 +116,8 @@
         </div>
         </div>  
   </form>
-
-
-
-  <?php 
-  session_start();
-  require 'config.php';
-   if (isset($_SESSION['login_user'])) {
-          $userLoggedIn = $_SESSION['login_user'];
-          $result = mysqli_query($con,"SELECT * FROM poll");
-
-            echo "<table border='1' id='customers'>
-            <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>feedback</th>
-			<th>feedback2</th>
-			<th>feedback3</th>
-            <th>Suggestions</th>
-            </tr>";
-
-            while($row = mysqli_fetch_array($result))
-            {
-            echo "<tr>";
-            echo "<td>" . $row['name'] . "</td>";
-            echo "<td>" . $row['email'] . "</td>";
-            echo "<td>" . $row['phone'] . "</td>";
-            echo "<td>" . $row['feedback'] . "</td>";
-			echo "<td>" . $row['feedback2'] . "</td>";
-			echo "<td>" . $row['feedback3'] . "</td>";
-            echo "<td>" . $row['suggestions'] . "</td>";
-            echo "</tr>";
-            }
-            echo "</table>";                                                                    
-}
-  else {
-  //header("Location: index.php");
-  }
-
-
-
-
-   ?>
     
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  
   
 </body>
 

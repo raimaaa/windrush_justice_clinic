@@ -13,14 +13,13 @@ $count_query = mysqli_num_rows($result_query);
 
 if ($count_query != 0) 
 	{
-
 	$sessionemail = $row['email'];
 	$_SESSION['login_user']= $sessionemail;
     header("Location: mainpage.php");
 	exit();
 	} 
 else {
-		    echo '<script>alert("Incorrect Credentials Entered"); location.replace(document.referrer);</script>';
+		    echo '<script>alert("Incorrect Credentials Entered");</script>';
 	}
 
 //echo $email;
