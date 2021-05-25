@@ -20,6 +20,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
     <h1 class="agile_head text-center">Windrush Justice Clinic</h1>
     <div class="w3layouts_main wrap">
 
+			<form method="POST" action="/admin/index.php">
+		    <input type="Admin"/>
+		  </form>
 
 
 
