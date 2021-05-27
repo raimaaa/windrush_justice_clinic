@@ -1,15 +1,15 @@
-<?php 
-ob_start(); 
+<?php
+ob_start();
 require 'config.php';
 
-$view = implode(' ', array($_POST['one'], $_POST['two'], $_POST['three'], $_POST['four'], $_POST['five']));
+$view = implode(' ', array($_POST['one']));
 $name = $_POST['name'];
 $comments = $_POST['comments'];
 $email = $_POST['email'];
 $num = $_POST['num'];
 
 
-$query = mysqli_query($con, "INSERT INTO `poll`(`name`, `email`, `phone`, `feedback`, `suggestions`) VALUES ('$name','$email','$num','$view','$comments')");
+$query = mysqli_query($con, "INSERT INTO `poll`(`name`, `email`, `phone`, `feedback`,`suggestions` ) VALUES ('$name','$email','$num','$view','$comments')");
 echo '<script>alert("Thank You..! Your Feedback is Valuable to Us");</script>';
 
 
@@ -17,21 +17,21 @@ echo '<script>alert("Thank You..! Your Feedback is Valuable to Us");</script>';
 /*$query1 = "SELECT * FROM `staff` WHERE email = '$email' AND password = '$password'";
 $result_query1 = mysqli_query($conn, $query1);
 $count_query1 = mysqli_num_rows($result_query1);
-/*if ($count_query1 != 0) 
+/*if ($count_query1 != 0)
 	{
     header("Location: controller/staff.php");
 	exit();
-	} 
+	}
 else {
 		    $query2 = "SELECT * FROM `admin` WHERE email = '$email' AND password = '$password'";
 			$result_query2 = mysqli_query($conn, $query2);
 			$count_query2 = mysqli_num_rows($result_query2);
 			$count_query2 = mysqli_num_rows($result_query2);
-			if ($count_query2!=0) 
+			if ($count_query2!=0)
 			{
 		   		header("Location: controller/admin.php");
 				exit();
-		   	} 		
+		   	}
 		   	else
 		   	 {
 		   	 	echo '<script>alert("Incorrect Credentials Entered"); location.replace(document.referrer);</script>';

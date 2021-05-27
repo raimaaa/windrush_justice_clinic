@@ -1,4 +1,4 @@
-<?php 
+<?php
   session_start();
   require 'config.php';
    if (isset($_SESSION['login_user'])) {
@@ -10,9 +10,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>feedback</th>
-			<th>feedback2</th>
-			<th>feedback3</th>
+            <th>Question 1</th>
             <th>Suggestions</th>
             </tr>";
 
@@ -23,12 +21,10 @@
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['phone'] . "</td>";
             echo "<td>" . $row['feedback'] . "</td>";
-			echo "<td>" . $row['feedback2'] . "</td>";
-			echo "<td>" . $row['feedback3'] . "</td>";
             echo "<td>" . $row['suggestions'] . "</td>";
             echo "</tr>";
             }
-            echo "</table>";                                                                    
+            echo "</table>";
 }
   else {
   //header("Location: index.php");
@@ -91,34 +87,34 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-  
+
       <link rel="stylesheet" href="css/style.css">
 
-  
+
 </head>
 
 <body>
- <form action = "#" method="POST"> 
+ <form action = "#" method="POST">
           <div class="w3-show-inline-block">
           <div class="w3-bar">
             <center>
               <input type="submit" value="Download as PDF" name="logout" class="w3-btn w3-black">
             </center>
         </div>
-        </div>  
+        </div>
   </form>
-   <form action = "logout.php" method="POST"> 
+   <form action = "logout.php" method="POST">
           <div class="w3-show-inline-block">
           <div class="w3-bar">
             <center>
               <input type="submit" value="LogOut" name="logout" class="w3-btn w3-black">
             </center>
         </div>
-        </div>  
+        </div>
   </form>
-    
+
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  
+
 </body>
 
 </html>

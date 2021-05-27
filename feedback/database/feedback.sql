@@ -32,7 +32,7 @@ CREATE TABLE `poll` (
   `email` text NOT NULL,
   `phone` text NOT NULL,
   `feedback` text NOT NULL,
-  `suggestions` text NOT NULL
+  `suggestions` text NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
